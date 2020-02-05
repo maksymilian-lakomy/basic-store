@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StoreItem } from '../../../models/StoreItem'
+import { StoreItem } from '../../../models/StoreItem';
+import { StoreService } from '../../../services/store.service';
 
 @Component({
     selector: 'app-store-display',
@@ -9,20 +10,12 @@ import { StoreItem } from '../../../models/StoreItem'
 export class StoreDisplayComponent implements OnInit {
     storeItems: StoreItem[];
 
-    constructor() { }
+    constructor(private storeService: StoreService) { }
 
     ngOnInit() {
-        this.storeItems = [
-            new StoreItem(1, 'Blue Baby Bottle SL', `Mikrofon Baby Bottle SL to kardioidalny
-                            mikrofon pojemnościowy o klasycznym brzmieniu i niesamowitej wszechstronności.
-                            Z bogatą prezencją średnicy, łagodną górą pasma oraz neutralnym dołem,
-                            Baby Bottle SL jest reminiscencją najlepszych vintageowych mikrofonów świata.`, 375),
-            new StoreItem(2, 'Focusrite Scarlett 18i8 3rd Gen', `Scarlett 18i8 trzeciej generacji to doskonały
-                            interfejs audio dla inżynierów i producentów nagrań, potrzebujących stworzyć sobie
-                            warunki do wielośladowego nagrywania, gdziekolwiek się znajdą.`, 395),
-            new StoreItem(3, 'Rode PSA-1', `Rode PSA1 Studio Arm to statyw mikrofonowy typu radiowego, dzięki
-                            któremu zyskasz szerokie możliwości modyfikacji ustawienia mikrofonu.`, 77)
-        ];
+        this.storeService.getStoreItems().subscribe((storeItems) => {
+            this.storeItems = storeItems;
+        });
     }
 
 }
