@@ -1,3 +1,5 @@
 <li>
-    <ng-content></ng-content>
+    <h3>{{ storeItem.name }}</h3>
+    <p>{{ storeItem.description }}</p>
+    <strong>{{ storeItem.price | currency:'EUR' }}</strong>
 </li>

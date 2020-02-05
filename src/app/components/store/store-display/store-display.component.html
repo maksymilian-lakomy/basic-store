@@ -1,4 +1,4 @@
-<p>store-display works!</p>
-<ul *ngFor="let storeItem of storeItems">
-    <app-store-item>{{ storeItem.name }}</app-store-item>
+<ul>
+    <app-store-item *ngFor="let storeItem of storeItems" [storeItem]="storeItem">
+    </app-store-item>
 </ul>
