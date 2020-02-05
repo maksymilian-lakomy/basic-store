@@ -1,0 +1,48 @@
+@import "../../../styles/variables"
+
+li
+    border-bottom: 3px solid black
+    padding: 1em 2em
+    cursor: pointer
+
+    .li__top
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        .li__top__name
+            position: relative
+            font-weight: bolder
+            letter-spacing: .05em
+
+            &::before
+                content: ""
+                position: absolute
+                background-color: black
+                width: 3px
+                height: 100%
+                left: -.5em
+                z-index: -1
+
+        .li__top__price
+            border-radius: 3px
+            font-weight: lighter
+            letter-spacing: .05em
+            background-color: black
+            color: white
+            padding: .25em .5em
+
+    .li__main
+        display: grid
+        grid-template-columns: repeat(6, 1fr)
+        grid-template-areas: "img description description description description description"
+
+        img 
+            display: block
+            grid-area: img
+            width: 100%
+        
+        .li__main__description
+            margin-left: 2rem
+            grid-area: description
+            line-height: 1.5rem

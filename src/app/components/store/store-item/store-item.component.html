@@ -1,7 +1,12 @@
 <li>
-    <h3>{{ storeItem.name }}</h3>
-    <p>{{ storeItem.description }}</p>
-    <strong>{{ storeItem.price | currency:'EUR' }}</strong>
+    <div class="li__top">
+        <h3 class="li__top__name">{{ storeItem.name }}</h3>
+        <h4 class="li__top__price">{{ storeItem.price | currency:'EUR' }}</h4>
+    </div>
+    <div class="li__main">
+        <img [src]="storeItem.gallery[0]" />
+        <div class = "li__main__description" >{{storeItem.description}}</div>
+    </div>
     <br />
-    <button class="store-item__to-shopping-cart">Do koszyka</button>
+    <!-- <button class="store-item__to-shopping-cart">Do koszyka</button> -->
 </li>
