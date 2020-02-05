@@ -7,6 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent {
 
-  title: string="Baby turns blue";
+  title: string="Bootleg Thomman";
 
 }
