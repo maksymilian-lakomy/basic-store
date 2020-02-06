@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { StoreItemComponent } from './components/store/store-item/store-item.component';
 import { StoreDisplayComponent } from './components/store/store-display/store-display.component';
+import { StoreFiltersComponent } from './components/store/store-filters/store-filters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     StoreItemComponent,
-    StoreDisplayComponent
+    StoreDisplayComponent,
+    StoreFiltersComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ export class StoreItemComponent implements OnInit {
 
     @Input() storeItem: StoreItem;
     @Input() selected: boolean;
-
+    
     constructor() { }
 
     ngOnInit() {

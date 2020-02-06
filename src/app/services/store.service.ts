@@ -7,12 +7,17 @@ import { Observable } from 'rxjs';
     providedIn: 'root'
 })
 export class StoreService {
-    storeDatabasePath: string = 'https://my-json-server.typicode.com/maksymilian-lakomy/demo/store/';
+    storeDatabasePath: string = 'https://my-json-server.typicode.com/maksymilian-lakomy/demo';
 
     constructor(private http: HttpClient) { }
 
     getStoreItems(): Observable<StoreItem[]> {
-        const store = this.http.get<StoreItem[]>(this.storeDatabasePath);
+        const store: Observable<StoreItem[]> = this.http.get<StoreItem[]>(`${this.storeDatabasePath}/store/`);
         return store;
+    }
+
+    getSettings(): Observable<string[]> {
+        const settings: Observable<string[]> = this.http.get<string[]>(`${this.storeDatabasePath}/settings/`);
+        return settings;
     }
 }

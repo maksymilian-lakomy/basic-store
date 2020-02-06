@@ -11,11 +11,16 @@ export class StoreDisplayComponent implements OnInit {
     storeItems: StoreItem[];
     selectedStoreItem: StoreItem | null;
 
+    settings: string[];
+
     constructor(private storeService: StoreService) { }
 
     ngOnInit(): void {
         this.storeService.getStoreItems().subscribe((storeItems) => {
             this.storeItems = storeItems;
+        });
+        this.storeService.getSettings().subscribe((setting) => {
+
         });
     }
 
