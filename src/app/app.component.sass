@@ -1,0 +1,21 @@
+#app
+    display: grid
+    grid-template-columns: repeat(9, 1fr)
+    grid-template-areas: ". . . header header header . . ." ". . options main main main . . ."
+
+    @media (max-width: 1200px)
+        grid-template-areas: ". . header header header header header . ." ". options main main main main main . ."
+    @media (max-width: 1000px)
+        grid-template-areas: ". header header header header header header header ." " options main main main main main main main ."
+
+    @media (max-width: 800px)
+        grid-template-areas: "header header header header header header header header header" "main main main main main main main main main"
+
+    app-root
+        grid-area: main
+
+    app-header
+        grid-area: header
+
+    app-store-display
+        grid-area: main

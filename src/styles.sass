@@ -7,18 +7,3 @@
 body
     margin: 0
     padding: 0
-    display: grid
-    grid-template-columns: repeat(9, 1fr)
-    grid-template-areas: ". . . main main main . . ."
-
-    @media (max-width: 1200px)
-        grid-template-areas: ". . main main main main main . ."
-
-    @media (max-width: 1000px)
-        grid-template-areas: ". main main main main main main main ."
-
-    @media (max-width: 800px)
-        grid-template-areas: "main main main main main main main main main"
-
-    app-root
-        grid-area: main
