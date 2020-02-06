@@ -9,10 +9,10 @@ import { StoreItem } from '../../../models/StoreItem';
 export class StoreItemComponent implements OnInit {
 
     @Input() storeItem: StoreItem;
+    @Input() selected: boolean;
 
     constructor() { }
 
     ngOnInit() {
     }
-
 }

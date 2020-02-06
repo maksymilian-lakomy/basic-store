@@ -1,4 +1,9 @@
 <ul>
-    <app-store-item *ngFor="let storeItem of storeItems" [storeItem]="storeItem">
+    <app-store-item 
+        *ngFor="let storeItem of storeItems"
+        (mouseenter)="onMouseEnter(storeItem)"
+        (mouseleave)="onMouseLeave()"
+        [storeItem]="storeItem"
+        [selected]="selectedStoreItem === storeItem">
     </app-store-item>
 </ul>

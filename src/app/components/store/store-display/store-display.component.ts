@@ -9,13 +9,22 @@ import { StoreService } from '../../../services/store.service';
 })
 export class StoreDisplayComponent implements OnInit {
     storeItems: StoreItem[];
+    selectedStoreItem: StoreItem | null;
 
     constructor(private storeService: StoreService) { }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.storeService.getStoreItems().subscribe((storeItems) => {
             this.storeItems = storeItems;
         });
+    }
+
+    onMouseEnter(storeItem: StoreItem): void {
+        this.selectedStoreItem = storeItem;
+    }
+
+    onMouseLeave(): void {
+        this.selectedStoreItem = null;
     }
 
 }
