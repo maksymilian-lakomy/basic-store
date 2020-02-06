@@ -8,6 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { StoreItemComponent } from './components/store/store-item/store-item.component';
 import { StoreDisplayComponent } from './components/store/store-display/store-display.component';
 import { StoreFiltersComponent } from './components/store/store-filters/store-filters.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,14 @@ import { StoreFiltersComponent } from './components/store/store-filters/store-fi
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
